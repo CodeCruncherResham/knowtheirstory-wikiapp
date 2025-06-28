@@ -24,7 +24,15 @@
 - LocalStorage
 
 ## 📷 Screenshots
-(Add screenshots here)
+
+### 🏠 Home Page  
+![Home Page](./home-page.png)
+
+### 📋 Bio Result  
+![Bio Page](./bio.png)
+
+### 🌙 Dark Mode  
+![Dark Mode](./dark-mode.png)
 
 ## 📁 Folder Structure
 know-their-story/
