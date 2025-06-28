@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KnowTheirStory</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light-mode">
+
+  <!-- 🌙 Dark Mode -->
+  <div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+  </div>
+
+  <!-- 🌀 Spinner -->
+  <div id="spinner" class="hidden">
+    <img src="spinner.gif" alt="Loading..." />
+  </div>
+
+  <!-- ❌ Error UI -->
+  <p id="errorBlock" class="error hidden"></p>
+
+  <!-- 🔍 Main Content -->
+  <div class="container">
+    <h1><span class="logo-icon">📖</span> KnowTheirStory <span class="spark">✨</span></h1>
+    <p class="tagline">Discover famous people, voice search, and Hindi translation – all in one click!</p>
+
+    <!-- 🔎 Search -->
+    <div class="search-box">
+      <input type="text" id="nameInput" placeholder="Enter a name..." />
+      <button onclick="searchBio()">🔍 Search</button>
+      <button onclick="startVoice()">🎤 Speak</button>
+    </div>
+
+<!-- 📂 History -->
+<div id="historyBox" class="history-box hidden">
+  <div class="history-header">
+    <h3>Recent Searches</h3>
+    <button onclick="clearHistory()" class="clear-btn">🧹 Clear All</button>
+  </div>
+  <ul id="historyList"></ul>
+</div>
+
+    <!-- 📋 Result Card -->
+    <div id="resultContainer" class="card hidden">
+      <img id="personImage" src="" alt="Person Image" />
+      <h2 id="personName"></h2>
+      <p><strong>DOB:</strong> <span id="dob"></span></p>
+      <p><strong>Profession:</strong> <span id="profession"></span></p>
+      <p id="bioSummary"></p>
+
+      <!-- 📖 Read More -->
+      <button id="readMoreBtn">📖 Read More</button>
+      <p id="fullBio" class="hidden"></p>
+
+      <!-- 🌐 Hindi Translation -->
+      <button onclick="translateToHindi()">🌐 Hindi</button>
+      <p id="hindiBio" class="hidden hindi-font"></p>
+
+      <!-- 📥 PDF -->
+      <button onclick="downloadPDF()">📥 Download PDF</button>
+    </div>
+  </div>
+
+  <!-- 📦 jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- 🔧 Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* 🌐 Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fdfdfd, #d6e4ff);
+  color: #222;
+  transition: 0.4s;
+}
+
+.dark-mode {
+  background: linear-gradient(to right, #121212, #1a1a1a);
+  color: #f1f1f1;
+}
+
+/* 🌟 Header */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+.logo-icon {
+  font-size: 2.2rem;
+}
+.spark {
+  font-size: 1.5rem;
+}
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* 🔄 Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+}
+
+/* 🔍 Search Box */
+.search-box {
+  margin-top: 20px;
+}
+.search-box input {
+  padding: 12px;
+  width: 60%;
+  max-width: 400px;
+  border: 2px solid #999;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+.search-box input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 5px #0077ff50;
+}
+.search-box button {
+  padding: 12px 15px;
+  margin-left: 8px;
+  border: none;
+  background: #0077ff;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.search-box button:hover {
+  background: #0055cc;
+}
+
+/* 📂 History Box */
+.history-box {
+  margin-top: 25px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+}
+.dark-mode .history-box {
+  background: #2b2b2b;
+}
+.history-box li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ccc;
+  cursor: pointer;
+}
+.history-box li:hover {
+  background-color: #f0f8ff;
+}
+.dark-mode .history-box li:hover {
+  background-color: #333;
+}
+
+/* 📋 Card */
+.card {
+  background: white;
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: 0.3s;
+}
+.dark-mode .card {
+  background: #1e1e1e;
+}
+.card img {
+  width: 160px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* 🧠 Info */
+.card p {
+  margin: 10px 0;
+}
+.card button {
+  padding: 10px 15px;
+  margin: 10px 8px;
+  background: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card button:hover {
+  background: #1c7c33;
+}
+
+/* 🌀 Spinner */
+#spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+#spinner img {
+  width: 50px;
+}
+
+/* ❗ Error Block */
+.error {
+  color: crimson;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+/* 🌙 Theme Toggle */
+.theme-toggle {
+  text-align: right;
+  padding: 15px;
+}
+.theme-toggle button {
+  background: #444;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.theme-toggle button:hover {
+  background: #222;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .search-box input {
+    width: 80%;
+  }
+  .card {
+    padding: 15px;
+  }
+}
+#hindiBio {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #0a4a0a;
+}
+/* Hidden */
+.hidden {
+  display: none;
+}
+/* 🧹 History Clear Button */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.clear-btn:hover {
+  background: #b02a37;
+}
+
+/* 🗑️ Delete Icon for each item */
+.delete-btn {
+  float: right;
+  background: transparent;
+  border: none;
+  color: crimson;
+  font-size: 16px;
+  cursor: pointer;
+}
