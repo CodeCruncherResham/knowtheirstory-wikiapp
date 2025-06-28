@@ -97,27 +97,50 @@ async function searchBio() {
   hideError();
   showSpinner();
 
-  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`;
+  const summaryUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name)}`;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(summaryUrl);
     const data = await res.json();
 
     if (data.extract) {
       personName.innerText = data.title || name;
       bioSummary.innerText = data.extract;
       personImage.src = data.thumbnail?.source || 'https://via.placeholder.com/150';
-      dob.innerText = data.birth_date || "N/A";
       profession.innerText = data.description || "N/A";
       resultContainer.classList.remove('hidden');
       fullBio.classList.add('hidden');
       hindiBio.classList.add('hidden');
       readMoreBtn.innerText = "📖 Read More";
       updateHistory(name);
+
+      // ✅ Fetch DOB from Parse API
+      const parseUrl = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(data.title)}&format=json&origin=*`;
+      const parseRes = await fetch(parseUrl);
+      const parseData = await parseRes.json();
+
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = parseData.parse.text["*"];
+
+      const infobox = tempDiv.querySelector(".infobox");
+      let dobText = "N/A";
+
+      if (infobox) {
+        const dobRow = [...infobox.querySelectorAll("tr")].find(row =>
+          row.textContent.toLowerCase().includes("born")
+        );
+        if (dobRow) {
+          dobText = dobRow.textContent.replace("Born", "").trim();
+        }
+      }
+
+      dob.innerText = dobText;
+
     } else {
       showError("No biography found.");
     }
-  } catch {
+  } catch (err) {
+    console.error(err);
     showError("Error fetching data.");
   } finally {
     hideSpinner();
